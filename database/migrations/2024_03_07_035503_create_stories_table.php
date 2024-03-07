@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('author_id')->constrained('users');
             $table->string('title');
+            $table->string('title_en');
             $table->string('slug')->unique();
             $table->text('description');
             $table->text('feat_img')->nullable();

@@ -11,6 +11,7 @@ class Story extends Model
 
     protected $fillable = [
         'title',
+        'title_en',
         'slug',
         'description',
         'author_id',

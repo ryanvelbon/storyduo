@@ -13,6 +13,7 @@ class StoryFactory extends Factory
 
         return [
             'title' => $title,
+            'title_en' => rtrim(fake()->sentence(4), '.'),
             'slug' => Str::slug($title),
             'description' => fake()->paragraph,
             'published' => true,
