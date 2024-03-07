@@ -26,6 +26,7 @@ class StoryResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Tabs::make('Tabs')
+                    ->columnSpanFull()
                     ->tabs([
                         Forms\Components\Tabs\Tab::make('Overview')
                             ->icon('heroicon-m-bell')
@@ -62,7 +63,37 @@ class StoryResource extends Resource
                             ->icon('heroicon-m-bell')
                             ->badge(5)
                             ->schema([
-                                // ...
+                                Forms\Components\Repeater::make('segments')
+                                    ->relationship()
+                                    ->schema([
+                                        Forms\Components\FileUpload::make('img')
+                                            ->label('Image')
+                                            ->image()
+                                            ->maxSize(1024),
+                                        Forms\Components\RichEditor::make('text_lan1')
+                                            ->label('Text')
+                                            ->required()
+                                            ->maxLength(500)
+                                            ->toolbarButtons([
+                                                'bold',
+                                                'italic',
+                                                'redo',
+                                                'undo',
+                                            ]),
+                                        Forms\Components\RichEditor::make('text_lan2')
+                                            ->label('Text (English)')
+                                            ->required()
+                                            ->maxLength(500)
+                                            ->toolbarButtons([
+                                                'bold',
+                                                'italic',
+                                                'redo',
+                                                'undo',
+                                            ]),
+                                    ])
+                                    ->columns(3)
+                                    ->orderColumn('sort')
+                                    ->defaultItems(3)
                             ]),
                     ])
             ]);

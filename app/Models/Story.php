@@ -28,7 +28,7 @@ class Story extends Model
 
     public function segments()
     {
-        return $this->hasMany(StorySegment::class);
+        return $this->hasMany(StorySegment::class)->orderBy('sort', 'asc');
     }
 
     public function scopePublished($query)
