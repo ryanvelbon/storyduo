@@ -30,4 +30,9 @@ class Story extends Model
     {
         return $this->hasMany(StorySegment::class);
     }
+
+    public function scopePublished($query)
+    {
+        return $query->where('published', true);
+    }
 }

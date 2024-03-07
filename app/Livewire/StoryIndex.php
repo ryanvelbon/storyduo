@@ -9,7 +9,9 @@ class StoryIndex extends Component
 {
     public function render()
     {
-        $stories = Story::all();
+        $stories = Story::query()
+            ->published()
+            ->get();
 
         return view('livewire.story-index', [
             'stories' => $stories,

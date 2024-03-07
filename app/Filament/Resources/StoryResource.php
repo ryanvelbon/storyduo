@@ -25,33 +25,46 @@ class StoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->live(debounce: '1000')
-                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
-                    ->required()
-                    ->maxLength(70),
-                Forms\Components\TextInput::make('title_en')
-                    ->label('Title (English)')
-                    ->required()
-                    ->maxLength(70),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\RichEditor::make('description')
-                    ->required()
-                    ->maxLength(200)
-                    ->columnSpanFull()
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'redo',
-                        'undo',
-                    ]),
-                Forms\Components\FileUpload::make('feat_img')
-                    ->image()
-                    ->maxSize(1024),
-                Forms\Components\Toggle::make('published')
-                    ->required(),
+                Forms\Components\Tabs::make('Tabs')
+                    ->tabs([
+                        Forms\Components\Tabs\Tab::make('Overview')
+                            ->icon('heroicon-m-bell')
+                            ->schema([
+                                Forms\Components\TextInput::make('title')
+                                    ->live(debounce: '1000')
+                                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
+                                    ->required()
+                                    ->maxLength(70),
+                                Forms\Components\TextInput::make('title_en')
+                                    ->label('Title (English)')
+                                    ->required()
+                                    ->maxLength(70),
+                                Forms\Components\TextInput::make('slug')
+                                    ->required()
+                                    ->maxLength(255),
+                                Forms\Components\RichEditor::make('description')
+                                    ->required()
+                                    ->maxLength(200)
+                                    ->columnSpanFull()
+                                    ->toolbarButtons([
+                                        'bold',
+                                        'italic',
+                                        'redo',
+                                        'undo',
+                                    ]),
+                                Forms\Components\FileUpload::make('feat_img')
+                                    ->image()
+                                    ->maxSize(1024),
+                                Forms\Components\Toggle::make('published')
+                                    ->required(),
+                            ]),
+                        Forms\Components\Tabs\Tab::make('Content Segments')
+                            ->icon('heroicon-m-bell')
+                            ->badge(5)
+                            ->schema([
+                                // ...
+                            ]),
+                    ])
             ]);
     }
 
@@ -79,7 +92,7 @@ class StoryResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->defaultSort('updated_at', 'desc')
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
             ])
