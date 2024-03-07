@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('feat_img')->nullable();
             $table->boolean('published')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
