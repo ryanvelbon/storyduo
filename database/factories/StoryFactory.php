@@ -9,7 +9,7 @@ class StoryFactory extends Factory
 {
     public function definition()
     {
-        $title = fake()->sentence;
+        $title = rtrim(fake()->sentence(4), '.');
 
         return [
             'title' => $title,

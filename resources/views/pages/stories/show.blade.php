@@ -7,14 +7,18 @@
     </div>
 </div>
 <div>
-    <div class="container py-32 prose md:prose-lg lg:prose-xl">
+    <div class="py-32 prose md:prose-lg lg:prose-xl mx-auto max-w-3xl">
         @forelse($story->segments as $segment)
             <div class="mb-16">
-                <div class="mb-8 bg-red-100">
+                <div class="mb-8 font-serif">
                     {!! $segment->text_lan1 !!}
                 </div>
-                <div class="bg-blue-100">
-                    {!! $segment->text_lan2 !!}
+                <div x-data="{ open: false }">
+                    <button @click="open = ! open" x-text="open ? 'Hide' : 'Show'" class="btn btn-secondary"></button>
+
+                    <div x-show="open" x-transition class="mt-6 bg-gray-200 rounded-2xl px-8 py-6">
+                        {!! $segment->text_lan2 !!}
+                    </div>
                 </div>
             </div>
         @empty
