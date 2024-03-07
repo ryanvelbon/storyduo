@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome')->name('home');
 
 Route::get('stories', StoryIndex::class)->name('stories.index');
-
 Route::get('stories/{story:slug}', [StoryController::class, 'show'])->name('stories.show');
+Route::view('for-writers', 'pages.for-writers');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
