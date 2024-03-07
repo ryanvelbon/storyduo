@@ -10,6 +10,9 @@
     <div class="py-32 prose md:prose-lg lg:prose-xl mx-auto max-w-3xl">
         @forelse($story->segments as $segment)
             <div class="mb-16">
+                @if($segment->img)
+                    <img src="{{ asset('storage/' . $segment->img) }}" class="h-96 mx-auto">
+                @endif
                 <div class="mb-8 font-serif">
                     {!! $segment->text_lan1 !!}
                 </div>

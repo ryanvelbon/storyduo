@@ -2,7 +2,11 @@
     <section class="container py-32">
         @forelse($stories as $story)
             <div class="flex flex-col gap-10 sm:flex-row items-center mb-24 mx-auto max-w-4xl">
-                <img class="w-64 h-64 flex-none rounded-full object-cover" src="https://placehold.co/300" alt="">
+                @if($story->feat_img)
+                    <img class="w-64 h-64 flex-none rounded-full object-cover" src="{{ asset('storage/' . $story->feat_img) }}" alt="">
+                @else
+                    <img class="w-64 h-64 flex-none rounded-full object-cover" src="https://placehold.co/300" alt="">
+                @endif
                 <div class="max-w-xl flex-auto my-auto text-center sm:text-left space-y-4">
                     <a href="{{ route('stories.show', $story) }}">
                         <h3 class="text-primary-600 hover:text-primary-500 text-3xl font-bold font-serif text-gray-800">{{ $story->title }}</h3>
