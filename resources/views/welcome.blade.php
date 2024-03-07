@@ -2,18 +2,12 @@
 
 @section('content')
 <style>
-    #features h3 {font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;}
-    code {background-color: #f7fafc; color: #4a5568; padding: 0.25rem;}
+
 </style>
 <section class="bg-white py-32">
     <div class="container">
-        <h2 class="text-5xl font-semibold text-gray-800">Build your next<br><span class="text-primary-600">Livewire & Filament App</span><br>with ease!</h2>
-        <p>This is the <code>welcome.blade.php</code> page.<br>Start your project by deleting all the code in this file and building a custom landing page.</p>
-        <div>
-            <button type="button" class="btn btn-primary btn-xs">Extra small</button>
-            <button type="button" class="btn btn-primary btn-sm">Small</button>
-            <button type="button" class="btn btn-primary">Base</button>
-            <button type="button" class="btn btn-primary btn-lg">Large</button>
+        <h2 class="text-5xl font-semibold text-gray-800"><span class="text-primary-600">Learn Italian</span> with stories</h2>
+        <div class="mt-8">
             <button type="button" class="btn btn-primary btn-xl">Extra large</button>
         </div>
     </div>
