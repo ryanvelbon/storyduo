@@ -24,3 +24,12 @@
         </div>
     </div>
 </nav>
+@if(isset($languages) && count($languages) > 0)
+    <nav class="bg-gray-200">
+        <div class="container py-4 flex justify-around">
+            @foreach($languages as $language)
+                <a href="">{{ $language->name }}</a>
+            @endforeach
+        </div>
+    </nav>
+@endif

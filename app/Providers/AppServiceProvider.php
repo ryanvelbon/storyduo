@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Language;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +22,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('partials.header', function ($view) {
+
+            $languages = Cache::rememberForever('languages.published', function () {
+                return Language::published()->get();
+            });
+
+            $view->with('languages', $languages);
+        });
     }
 }
