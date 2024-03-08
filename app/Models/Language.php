@@ -20,4 +20,9 @@ class Language extends Model
     {
         return $query->where('published', true);
     }
+
+    public function stories()
+    {
+        return $this->hasMany(Story::class);
+    }
 }

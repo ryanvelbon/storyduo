@@ -12,6 +12,7 @@ class StoryFactory extends Factory
         $title = rtrim(fake()->sentence(4), '.');
 
         return [
+            'language_id' => rand(1,5),
             'title' => $title,
             'title_en' => rtrim(fake()->sentence(4), '.'),
             'slug' => Str::slug($title),

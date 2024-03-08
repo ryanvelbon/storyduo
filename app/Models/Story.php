@@ -12,11 +12,12 @@ class Story extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'author_id',
+        'language_id',
         'title',
         'title_en',
         'slug',
         'description',
-        'author_id',
         'feat_img',
         'published',
     ];
@@ -24,6 +25,11 @@ class Story extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function language()
+    {
+        return $this->belongsTo(Language::class);
     }
 
     public function segments()

@@ -31,6 +31,8 @@ class StoryResource extends Resource
                         Forms\Components\Tabs\Tab::make('Overview')
                             ->icon('heroicon-m-bell')
                             ->schema([
+                                Forms\Components\Select::make('language_id')
+                                    ->relationship(name: 'language', titleAttribute: 'name'),
                                 Forms\Components\TextInput::make('title')
                                     ->live(debounce: '1000')
                                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
@@ -72,7 +74,6 @@ class StoryResource extends Resource
                                             ->maxSize(1024),
                                         Forms\Components\RichEditor::make('text_lan1')
                                             ->label('Text')
-                                            ->required()
                                             ->maxLength(500)
                                             ->toolbarButtons([
                                                 'bold',
@@ -82,7 +83,6 @@ class StoryResource extends Resource
                                             ]),
                                         Forms\Components\RichEditor::make('text_lan2')
                                             ->label('Text (English)')
-                                            ->required()
                                             ->maxLength(500)
                                             ->toolbarButtons([
                                                 'bold',
@@ -93,7 +93,7 @@ class StoryResource extends Resource
                                     ])
                                     ->columns(3)
                                     ->orderColumn('sort')
-                                    ->defaultItems(3)
+                                    ->defaultItems(1)
                             ]),
                     ])
             ]);
@@ -106,6 +106,8 @@ class StoryResource extends Resource
                 Tables\Columns\TextColumn::make('author.name'),
                 Tables\Columns\ImageColumn::make('feat_img')
                     ->label('Image'),
+                Tables\Columns\TextColumn::make('language.code')
+                    ->label('Lang'),
                 Tables\Columns\TextColumn::make('title')
                     ->description(fn (Story $record): string => $record->title_en)
                     ->searchable(),

@@ -14,7 +14,7 @@ class DemoSeeder extends Seeder
     {
         $author = User::factory()->create();
 
-        Story::factory(10)
+        Story::factory(50)
             ->has(StorySegment::factory()->count(10), 'segments')
             ->create([
                 'author_id' => $author->id,

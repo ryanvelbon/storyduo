@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('author_id')->constrained('users');
+            $table->foreignId('language_id');
             $table->string('title');
             $table->string('title_en');
             $table->string('slug')->unique();
