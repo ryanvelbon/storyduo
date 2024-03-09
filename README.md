@@ -3,6 +3,7 @@ Something similar to [this website](https://www.theitalianexperiment.com/stories
 
 # UI
 - [Buttons](https://getcssscan.com/css-buttons-examples)
+- Flag icons taken from [Icon Pack - Square Country Simple Flags](https://www.flaticon.com/packs/square-country-simple-flags)
 
 
 
