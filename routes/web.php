@@ -9,13 +9,12 @@ use App\Livewire\Auth\Passwords\Email;
 use App\Livewire\Auth\Passwords\Reset;
 use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
-use App\Livewire\StoryIndex;
 use Illuminate\Support\Facades\Route;
 
 
 Route::view('/', 'welcome')->name('home');
 
-Route::get('stories', StoryIndex::class)->name('stories.index');
+Route::get('{language:code}/stories', [StoryController::class, 'index'])->name('stories.index');
 Route::get('stories/{story:slug}', [StoryController::class, 'show'])->name('stories.show');
 Route::view('for-writers', 'pages.for-writers');
 

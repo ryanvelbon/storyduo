@@ -1,4 +1,6 @@
-<div>
+@extends('layouts.app')
+
+@section('content')
     <section class="container py-32">
         @forelse($stories as $story)
             <div class="flex flex-col gap-10 sm:flex-row items-center mb-24 mx-auto max-w-4xl">
@@ -24,4 +26,4 @@
             </div>
         @endforelse
     </section>
-</div>
+@endsection
