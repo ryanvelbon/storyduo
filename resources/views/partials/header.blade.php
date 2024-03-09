@@ -4,7 +4,6 @@
             <a href="{{ route('home') }}">Home</a>
         </div>
         <div class="space-x-4">
-            <a href="{{ route('stories.index') }}" wire:navigate>Stories</a>
             @if (Route::has('login'))
                 @auth
                     <form method="POST" action="{{ route('logout') }}">
@@ -26,9 +25,12 @@
 </nav>
 @if(isset($languages) && count($languages) > 0)
     <nav class="bg-gray-200">
-        <div class="container py-4 flex justify-around">
+        <div class="container py-2 flex justify-around">
             @foreach($languages as $language)
-                <a href="">{{ $language->name }}</a>
+                <a href="{{ route('stories.index', $language) }}" class="flex items-center gap-2">
+                    <img src="{{ asset('img/languages/square/' . $language->flag_code . '.png') }}" class="h-6 w-6 rounded-full">
+                    <span class="hidden lg:block">{{ $language->name }}</span>
+                </a>
             @endforeach
         </div>
     </nav>
