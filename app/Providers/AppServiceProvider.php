@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('partials.header', function ($view) {
+        View::composer(['partials.header', 'partials.footer'], function ($view) {
 
             $languages = Cache::rememberForever('languages.published', function () {
                 return Language::published()->get();
