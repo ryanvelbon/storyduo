@@ -24,8 +24,8 @@
     </div>
 </nav>
 @if(isset($languages) && count($languages) > 0)
-    <nav class="bg-gray-200">
-        <div class="container py-2 flex justify-around">
+    <nav class="bg-gray-600 text-gray-100">
+        <div class="container py-3 flex justify-around">
             @foreach($languages as $language)
                 <a href="{{ route('stories.index', $language) }}" class="flex items-center gap-2">
                     <img src="{{ asset('img/languages/square/' . $language->flag_code . '.png') }}" class="h-6 w-6 rounded-full">

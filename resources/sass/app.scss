@@ -51,6 +51,10 @@
    @apply text-white bg-secondary-500 hover:bg-secondary-600 focus:ring-secondary-300 dark:bg-secondary-400 dark:hover:bg-secondary-500 dark:focus:ring-secondary-600;
 }
 
+.btn-muted {
+   @apply text-gray-700 border border-gray-700 hover:text-black hover:border-black;
+}
+
 .container {
    @apply mx-auto max-w-7xl px-6 lg:px-8;
 }
