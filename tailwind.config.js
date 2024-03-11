@@ -6,12 +6,13 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: colors.orange,
-                secondary: colors.blue,
+                primary: colors.pink,
+                secondary: colors.sky,
                 gray: colors.stone,
             },
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                serif: ['Lora', ...defaultTheme.fontFamily.serif],
             },
         },
     },

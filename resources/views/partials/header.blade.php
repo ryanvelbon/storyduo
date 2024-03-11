@@ -1,9 +1,9 @@
 <nav class="bg-gray-800 text-white p-4">
     <div class="container flex justify-between">
         <div>
-            <a href="{{ route('home') }}">Home</a>
+            <a href="{{ route('home') }}" class="font-serif">storyduo</a>
         </div>
-        <div class="space-x-4">
+        <div class="space-x-1">
             @if (Route::has('login'))
                 @auth
                     <form method="POST" action="{{ route('logout') }}">
@@ -13,7 +13,7 @@
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="text-white hover:text-primary-400">Log in</a>
+                    <a href="{{ route('login') }}" class="btn hover:bg-white/5 text-white">Log in</a>
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}" class="btn btn-primary">Register</a>

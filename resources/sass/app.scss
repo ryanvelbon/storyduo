@@ -24,7 +24,7 @@
 @tailwind components;
 
 .btn {
-   @apply px-5 py-2.5 text-sm font-medium focus:ring-4 focus:outline-none rounded-lg text-center;
+   @apply px-5 py-2.5 text-sm font-medium focus:ring-4 focus:outline-none rounded text-center;
 }
 
 .btn-xs {
