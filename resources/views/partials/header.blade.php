@@ -64,9 +64,7 @@
                 </div>
             </div>
 
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+            <a href="{{ route('contributions.create') }}" class="text-sm font-semibold leading-6 text-gray-900">Write your Story</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
             @if (Route::has('login'))
@@ -126,16 +124,17 @@
                             </div>
                         </div>
                         @endif
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+                        <a href="{{ route('contributions.create') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Write a Story</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Stories</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Vocabulary</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Find a Teacher</a>
                     </div>
                     <div class="py-6 space-y-2">
                         @if (Route::has('login'))
                             @auth
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <button type="submit" class="block btn btn-muted">
+                                    <button type="submit" class="block w-full btn btn-muted">
                                         <span>Sign out</span>
                                     </button>
                                 </form>
