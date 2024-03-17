@@ -23,7 +23,7 @@
                     </svg>
                 </button>
 
-                <div x-show="openDropdown" class="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5 transition ease-out duration-200" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-1">
+                <div x-cloak x-show="openDropdown" class="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5 transition ease-out duration-200" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-1">
                     @if(isset($languages) && count($languages) > 0)
                     <div class="mx-auto grid max-w-7xl grid-cols-6 gap-4 px-6 py-10 lg:px-8 xl:gap-8">
                         @foreach($languages as $language)
