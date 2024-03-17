@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer(['partials.header', 'partials.footer'], function ($view) {
 
             $languages = Cache::rememberForever('languages.published', function () {
-                return Language::published()->get();
+                return Language::query()->withCount('stories')->published()->get();
             });
 
             $view->with('languages', $languages);
