@@ -11,7 +11,7 @@
                 @endif
                 <div class="max-w-xl flex-auto my-auto text-center sm:text-left space-y-4">
                     <a href="{{ route('stories.show', $story) }}">
-                        <h3 class="text-primary-600 hover:text-primary-500 text-3xl font-bold font-serif text-gray-800">{{ $story->title }}</h3>
+                        <h3 class="text-gray-800 hover:text-primary-500 text-3xl font-bold">{{ $story->title }}</h3>
                     </a>
                     <p class="uppercase text-gray-500 text-lg tracking-widest">{{ $story->title_en }}</p>
                     <p class="prose md:prose-lg lg:prose-xl font-serif">{!! $story->description !!}</p>

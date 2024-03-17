@@ -17,7 +17,7 @@
                 <ul role="list" class="mt-6 space-y-4">
                     @foreach($languages as $language)
                         <li>
-                            <a href="" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ $language->name }} vocabulary</a>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ $language->name }} vocabulary</a>
                         </li>
                     @endforeach
                 </ul>
@@ -27,7 +27,7 @@
                 <ul role="list" class="mt-6 space-y-4">
                     @foreach($languages as $language)
                         <li>
-                            <a href="" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ $language->name }} teachers</a>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ $language->name }} teachers</a>
                         </li>
                     @endforeach
                 </ul>
