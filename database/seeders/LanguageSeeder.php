@@ -113,6 +113,36 @@ class LanguageSeeder extends Seeder
                 'code' => 'jv',
                 'flag_code' => 'id',
             ],
+            [
+                'name' => 'Sicilian',
+                'name_native' => 'Sicilianu',
+                'code' => 'scn',
+                'flag_code' => 'scn',
+            ],
+            [
+                'name' => 'Arabic',
+                'name_native' => 'العربية',
+                'code' => 'ar',
+                'flag_code' => 'ps',
+            ],
+            [
+                'name' => 'Polish',
+                'name_native' => 'Polski',
+                'code' => 'pl',
+                'flag_code' => 'pl',
+            ],
+            [
+                'name' => 'Hindi',
+                'name_native' => 'हिन्दी',
+                'code' => 'hi',
+                'flag_code' => 'in',
+            ],
+            [
+                'name' => 'Tamil',
+                'name_native' => 'தமிழ்',
+                'code' => 'ta',
+                'flag_code' => 'in',
+            ],
         ]);
     }
 }

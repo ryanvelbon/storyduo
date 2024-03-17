@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('name_native')->nullable();
             $table->string('code')->unique();
             $table->string('flag_code');
-            $table->boolean('published')->default(false);
+            $table->boolean('published')->default(true);
         });
     }
 
