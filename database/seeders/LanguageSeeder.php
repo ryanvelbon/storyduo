@@ -48,22 +48,10 @@ class LanguageSeeder extends Seeder
                 'flag_code' => 'tr',
             ],
             [
-                'name' => 'Indonesian',
-                'name_native' => 'Bahasa Indonesia',
-                'code' => 'id',
-                'flag_code' => 'id',
-            ],
-            [
                 'name' => 'Greek',
                 'name_native' => 'Ελληνικά',
                 'code' => 'el',
                 'flag_code' => 'gr',
-            ],
-            [
-                'name' => 'Russian',
-                'name_native' => 'Русский',
-                'code' => 'ru',
-                'flag_code' => 'ru',
             ],
             [
                 'name' => 'Dutch',
@@ -72,10 +60,40 @@ class LanguageSeeder extends Seeder
                 'flag_code' => 'nl',
             ],
             [
-                'name' => 'Maltese',
-                'name_native' => 'Malti',
-                'code' => 'mt',
-                'flag_code' => 'mt',
+                'name' => 'Polish',
+                'name_native' => 'Polski',
+                'code' => 'pl',
+                'flag_code' => 'pl',
+            ],
+            [
+                'name' => 'Russian',
+                'name_native' => 'Русский',
+                'code' => 'ru',
+                'flag_code' => 'ru',
+            ],
+            [
+                'name' => 'Arabic',
+                'name_native' => 'العربية',
+                'code' => 'ar',
+                'flag_code' => 'ps',
+            ],
+            [
+                'name' => 'Hindi',
+                'name_native' => 'हिन्दी',
+                'code' => 'hi',
+                'flag_code' => 'in',
+            ],
+            [
+                'name' => 'Tamil',
+                'name_native' => 'தமிழ்',
+                'code' => 'ta',
+                'flag_code' => 'in',
+            ],
+            [
+                'name' => 'Indonesian',
+                'name_native' => 'Bahasa Indonesia',
+                'code' => 'id',
+                'flag_code' => 'id',
             ],
             [
                 'name' => 'Malay',
@@ -120,28 +138,10 @@ class LanguageSeeder extends Seeder
                 'flag_code' => 'scn',
             ],
             [
-                'name' => 'Arabic',
-                'name_native' => 'العربية',
-                'code' => 'ar',
-                'flag_code' => 'ps',
-            ],
-            [
-                'name' => 'Polish',
-                'name_native' => 'Polski',
-                'code' => 'pl',
-                'flag_code' => 'pl',
-            ],
-            [
-                'name' => 'Hindi',
-                'name_native' => 'हिन्दी',
-                'code' => 'hi',
-                'flag_code' => 'in',
-            ],
-            [
-                'name' => 'Tamil',
-                'name_native' => 'தமிழ்',
-                'code' => 'ta',
-                'flag_code' => 'in',
+                'name' => 'Maltese',
+                'name_native' => 'Malti',
+                'code' => 'mt',
+                'flag_code' => 'mt',
             ],
         ]);
     }
