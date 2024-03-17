@@ -4,7 +4,7 @@
 <section class="bg-gray-900">
     <div class="relative isolate overflow-hidden pt-14">
         <img src="{{ asset('img/bg1.jpg') }}" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
-        <div class="absolute inset-0 -z-10 bg-black/60"></div>
+        <div class="absolute inset-0 -z-10 bg-white/20"></div>
         <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56 px-2">
             <div class="text-center">
                 <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl bg-black py-4">Learn a New Language</h1>
