@@ -1,9 +1,9 @@
 <header class="relative isolate z-10 bg-white" x-data="{ openMenu: false, openProductSubMenu: false }">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-            <a href="{{ route('home') }}" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <x-logo class="w-auto h-8 text-primary-600" />
+            <a href="{{ route('home') }}" class="-m-1.5 p-1.5 flex flex-row items-center">
+                <img class="h-10" src="{{ asset('img/logo.png') }}">
+                <span class="ml-2 font-bold font-serif">storyduo</span>
             </a>
         </div>
         <div class="flex lg:hidden">
@@ -44,13 +44,13 @@
                         <div class="mx-auto max-w-7xl px-6 lg:px-8">
                             <div class="grid grid-cols-3 divide-x divide-gray-900/5 border-x border-gray-900/5">
                                 <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
-                                    Watch demo
+                                    Contribute
                                 </a>
                                 <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
-                                    Contact sales
+                                    Find a teacher
                                 </a>
                                 <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
-                                    View all products
+                                    View all languages
                                 </a>
                             </div>
                         </div>
