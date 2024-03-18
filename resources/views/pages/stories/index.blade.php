@@ -25,5 +25,8 @@
                 No results.
             </div>
         @endforelse
+        <div>
+            {{ $stories->links() }}
+        </div>
     </section>
 @endsection

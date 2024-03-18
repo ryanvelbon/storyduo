@@ -13,7 +13,7 @@ class StoryController extends Controller
         $stories = Story::query()
             ->published()
             ->where('language_id', $language->id)
-            ->get();
+            ->paginate(10);
 
         return view('pages.stories.index', [
             'stories' => $stories,
