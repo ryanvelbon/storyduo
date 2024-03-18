@@ -12,12 +12,14 @@ class DemoSeeder extends Seeder
 {
     public function run(): void
     {
-        $author = User::factory()->create();
+        $authors = User::factory(20)->create();
 
-        Story::factory(50)
-            ->has(StorySegment::factory()->count(10), 'segments')
-            ->create([
-                'author_id' => $author->id,
-            ]);
+        for ($i=0; $i <500 ; $i++) {
+            Story::factory()
+                ->has(StorySegment::factory()->count(rand(3,10)), 'segments')
+                ->create([
+                    'author_id' => $authors->random()->id,
+                ]);
+        }
     }
 }
