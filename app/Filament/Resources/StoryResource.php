@@ -31,6 +31,9 @@ class StoryResource extends Resource
                         Forms\Components\Tabs\Tab::make('Overview')
                             ->icon('heroicon-m-bell')
                             ->schema([
+                                Forms\Components\Select::make('author_id')
+                                    ->relationship(name: 'author', titleAttribute: 'username')
+                                    ->searchable(['name', 'username', 'email']),
                                 Forms\Components\Select::make('language_id')
                                     ->relationship(name: 'language', titleAttribute: 'name'),
                                 Forms\Components\TextInput::make('title')
@@ -63,7 +66,6 @@ class StoryResource extends Resource
                             ]),
                         Forms\Components\Tabs\Tab::make('Content Segments')
                             ->icon('heroicon-m-bell')
-                            ->badge(5)
                             ->schema([
                                 Forms\Components\Repeater::make('segments')
                                     ->relationship()

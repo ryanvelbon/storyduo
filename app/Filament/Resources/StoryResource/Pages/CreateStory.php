@@ -12,7 +12,9 @@ class CreateStory extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['author_id'] = auth()->id();
+        if (!isset($data['author_id'])) {
+            $data['author_id'] = auth()->id();
+        }
 
         return $data;
     }
