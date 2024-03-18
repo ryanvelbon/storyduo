@@ -24,3 +24,5 @@ Cache Blade Icons for better performance.
 Additionally run:
 
     $ php artisan storage:link
+
+You should have a `user.jpg` file in `storage/app/public`. This will be used as a fallback image for users without an avatar.

@@ -53,7 +53,6 @@ class UserResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('avatar')
                     ->label('')
-                    ->defaultImageUrl(url('/img/user.jpg'))
                     ->circular(),
                 Tables\Columns\TextColumn::make('name')
                     ->description(fn (User $record): string => $record->username)

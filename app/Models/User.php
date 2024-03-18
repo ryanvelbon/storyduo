@@ -41,4 +41,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Story::class, 'author_id');
     }
+
+    /**
+     * Returns a default avatar if the avatar column is null.
+     * Helps us avoid having to make repetitive conditional checks in our Blade views.
+     */
+    public function getAvatarAttribute($value)
+    {
+        return $value ?: 'user.jpg';
+    }
 }
