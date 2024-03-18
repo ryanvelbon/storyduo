@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Language;
 use App\Models\Story;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class StoryController extends Controller
 {
@@ -30,9 +31,17 @@ class StoryController extends Controller
 
     public function random(Language $language)
     {
-        $story = Story::where('language_id', $language->id)
-                    ->inRandomOrder()
-                    ->firstOrFail();
+        $cacheKey = 'all_stories_for_language_' . $language->id;
+
+        $stories = Cache::rememberForever($cacheKey, function () use ($language) {
+            return Story::where('language_id', $language->id)->get();
+        });
+
+        if ($stories->isEmpty()) {
+            abort(404);
+        }
+
+        $story = $stories->random();
 
         return redirect()->route('stories.show', $story);
     }
