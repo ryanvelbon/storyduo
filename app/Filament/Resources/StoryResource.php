@@ -50,7 +50,7 @@ class StoryResource extends Resource
                                     ->maxLength(255),
                                 Forms\Components\RichEditor::make('description')
                                     ->required()
-                                    ->maxLength(200)
+                                    ->maxLength(500)
                                     ->columnSpanFull()
                                     ->toolbarButtons([
                                         'bold',
@@ -76,6 +76,7 @@ class StoryResource extends Resource
                                             ->maxSize(1024),
                                         Forms\Components\RichEditor::make('text_lan1')
                                             ->label('Text')
+                                            ->required()
                                             ->maxLength(500)
                                             ->toolbarButtons([
                                                 'bold',
@@ -95,7 +96,7 @@ class StoryResource extends Resource
                                     ])
                                     ->columns(3)
                                     ->orderColumn('sort')
-                                    ->defaultItems(1)
+                                    ->defaultItems(0)
                             ]),
                     ])
             ]);
