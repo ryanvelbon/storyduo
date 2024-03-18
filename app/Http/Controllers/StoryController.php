@@ -17,6 +17,7 @@ class StoryController extends Controller
 
         return view('pages.stories.index', [
             'stories' => $stories,
+            'language' => $language,
         ]);
     }
 
@@ -25,5 +26,14 @@ class StoryController extends Controller
         return view('pages.stories.show', [
             'story' => $story,
         ]);
+    }
+
+    public function random(Language $language)
+    {
+        $story = Story::where('language_id', $language->id)
+                    ->inRandomOrder()
+                    ->firstOrFail();
+
+        return redirect()->route('stories.show', $story);
     }
 }

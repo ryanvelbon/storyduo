@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="container py-32">
+    <div class="bg-gray-300 py-16 mb-12">
+        <div class="flex items-center gap-12 container">
+            <img src="{{ asset('img/languages/square/' . $language->flag_code . '.png') }}" class="rounded-full w-20 h-20">
+            <div>
+                <h2 class="text-5xl text-gray-500 font-bold text-center mb-8">{{ $language->name }} Stories</h2>
+                <a href="{{ route('stories.random', $language) }}" class="btn btn-secondary">Random story</a>
+            </div>
+        </div>
+    </div>
+    <section class="container">
         @forelse($stories as $story)
             <div class="flex flex-col gap-10 sm:flex-row items-center mb-24 mx-auto max-w-4xl">
                 @if($story->feat_img)

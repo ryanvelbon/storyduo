@@ -19,6 +19,8 @@ Route::get('{language:code}/stories', [StoryController::class, 'index'])->name('
 Route::get('stories/{story:slug}', [StoryController::class, 'show'])->name('stories.show');
 Route::view('for-writers', 'pages.for-writers');
 
+Route::get('random/story/{language:code}', [StoryController::class, 'random'])->name('stories.random');
+
 Route::middleware('auth')->group(function () {
     Route::get('contribute/stories/create', CreateContribution::class)->name('contributions.create');
     Route::view('contribute/success', 'pages.contribution-submitted')->name('contributions.success');
