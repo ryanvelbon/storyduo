@@ -6,6 +6,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Auth\Events\Registered;
 use Livewire\Component;
 
@@ -34,6 +35,7 @@ class Register extends Component
         $user = User::create([
             'email' => $this->email,
             'name' => $this->name,
+            'username' => Str::slug($this->name, '') . substr(time(), -6),
             'password' => Hash::make($this->password),
         ]);
 
