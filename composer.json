@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "cms-multi/filament-clear-cache": "^2.0",
         "filament/filament": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel-frontend-presets/tall": "^7.0",
