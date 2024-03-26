@@ -16,6 +16,9 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://kit.fontawesome.com/cc98f54b6e.css" crossorigin="anonymous">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
