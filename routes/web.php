@@ -15,16 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 
-Route::get('{language:code}/stories', [StoryController::class, 'index'])->name('stories.index');
-Route::get('stories/{story:slug}', [StoryController::class, 'show'])->name('stories.show');
+Route::get('{language:code}/stories', [StoryController::class, 'index'])
+    ->name('stories.index');
+
+Route::get('stories/{story:slug}', [StoryController::class, 'show'])
+    ->name('stories.show');
+
 Route::view('for-writers', 'pages.for-writers');
 
-Route::get('random/story/{language:code}', [StoryController::class, 'random'])->name('stories.random');
-
-Route::middleware('auth')->group(function () {
-    Route::get('contribute/stories/create', CreateContribution::class)->name('contributions.create');
-    Route::view('contribute/success', 'pages.contribution-submitted')->name('contributions.success');
-});
+Route::get('random/story/{language:code}', [StoryController::class, 'random'])
+    ->name('stories.random');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
@@ -47,13 +47,17 @@ Route::middleware('auth')->group(function () {
 
     Route::get('password/confirm', Confirm::class)
         ->name('password.confirm');
-});
 
-Route::middleware('auth')->group(function () {
     Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
         ->middleware('signed')
         ->name('verification.verify');
 
     Route::post('logout', LogoutController::class)
         ->name('logout');
+
+    Route::get('contribute/stories/create', CreateContribution::class)
+        ->name('contributions.create');
+
+    Route::view('contribute/success', 'pages.contribution-submitted')
+        ->name('contributions.success');
 });
