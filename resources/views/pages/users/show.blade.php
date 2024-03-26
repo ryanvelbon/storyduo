@@ -9,6 +9,12 @@
             </div>
             <div class="space-y-4 text-center md:text-left">
                 <h2 class="text-gray-800 text-4xl font-bold">{{ $user->name }}</h2>
+                @if($user->language)
+                    <div class="flex gap-2 items-center">
+                        <img src="{{ asset('img/languages/square/' . $user->language->flag_code . '.png') }}" class="w-6 h-6 rounded-full text-gray-600">
+                        {{ $user->language->name }}
+                    </div>
+                @endif
                 <p>{{ $user->bio }}</p>
                 <ul role="list" class="mt-6 flex gap-x-6">
                     @if($user->sm_twitter)

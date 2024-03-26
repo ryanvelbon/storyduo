@@ -15,6 +15,7 @@ class UserFactory extends Factory
         return [
             'name' => fake()->firstName() . ' ' . fake()->lastName(),
             'username' => fake()->userName(),
+            'language_id' => rand(1,10),
             'bio' => fake()->text(160),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),

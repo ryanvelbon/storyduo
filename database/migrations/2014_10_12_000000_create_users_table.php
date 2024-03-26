@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->text('avatar')->nullable();
+            $table->foreignId('language_id')->nullable();
             $table->string('bio', 200)->nullable();
             $table->string('sm_instagram')->nullable();
             $table->string('sm_linkedin')->nullable();

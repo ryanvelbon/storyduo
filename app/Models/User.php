@@ -17,6 +17,7 @@ class User extends Authenticatable
         'name',
         'username',
         'avatar',
+        'language_id',
         'bio',
         'sm_instagram',
         'sm_linkedin',
@@ -34,6 +35,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function language()
+    {
+        return $this->belongsTo(Language::class);
+    }
 
     public function contributions()
     {

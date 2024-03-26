@@ -48,7 +48,7 @@
         <img class="w-52 flex-none rounded-full object-cover" src="{{ asset('storage/' . $story->author->avatar) }}" alt="">
         <div class="max-w-xl flex-auto">
             <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900 hover:text-primary-600">
-                <a href="{{ route('users.show', $story->author) }}">
+                <a href="{{ route('users.show', $story->author) }}" wire:navigate>
                     {{ $story->author->name }}
                 </a>
             </h3>

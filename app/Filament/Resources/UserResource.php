@@ -44,6 +44,8 @@ class UserResource extends Resource
                 Forms\Components\FileUpload::make('avatar')
                     ->image()
                     ->maxSize(1024),
+                Forms\Components\Select::make('language_id')
+                    ->relationship(name: 'language', titleAttribute: 'name'),
             ]);
     }
 
@@ -53,6 +55,9 @@ class UserResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('avatar')
                     ->label('')
+                    ->circular(),
+                Tables\Columns\ImageColumn::make('lang')
+                    ->defaultImageUrl(fn (User $record): string => $record->language ? url("img/languages/square/{$record->language->flag_code}.png") : '')
                     ->circular(),
                 Tables\Columns\TextColumn::make('name')
                     ->description(fn (User $record): string => $record->username)

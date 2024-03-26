@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Language;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Concerns\InteractsWithForms;
@@ -29,8 +30,6 @@ class EditProfile extends Component implements HasForms
                     ->schema([
                         Forms\Components\Section::make()
                             ->schema([
-                                Forms\Components\TextInput::make('name')
-                                    ->required(),
                                 Forms\Components\FileUpload::make('avatar')
                                     ->image()
                                     ->maxSize(1024),
@@ -38,6 +37,11 @@ class EditProfile extends Component implements HasForms
                             ->columnSpan(1),
                         Forms\Components\Section::make()
                             ->schema([
+                                Forms\Components\TextInput::make('name')
+                                    ->required(),
+                                Forms\Components\Select::make('language_id')
+                                    ->label('Native language')
+                                    ->options(Language::orderBy('name')->pluck('name', 'id')),
                                 Forms\Components\TextArea::make('bio')
                                     ->columnSpanFull(),
                                 Forms\Components\TextInput::make('sm_twitter')
