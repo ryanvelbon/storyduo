@@ -14,6 +14,9 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->text('avatar')->nullable();
             $table->string('bio', 200)->nullable();
+            $table->string('sm_instagram')->nullable();
+            $table->string('sm_linkedin')->nullable();
+            $table->string('sm_twitter')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

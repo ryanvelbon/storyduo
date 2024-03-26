@@ -18,6 +18,9 @@ class User extends Authenticatable
         'username',
         'avatar',
         'bio',
+        'sm_instagram',
+        'sm_linkedin',
+        'sm_twitter',
         'email',
         'password',
     ];
