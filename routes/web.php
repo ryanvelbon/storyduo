@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\StoryController;
+use App\Http\Controllers\UserController;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Passwords\Confirm;
 use App\Livewire\Auth\Passwords\Email;
@@ -21,6 +22,9 @@ Route::get('{language:code}/stories', [StoryController::class, 'index'])
 
 Route::get('stories/{story:slug}', [StoryController::class, 'show'])
     ->name('stories.show');
+
+Route::get('u/{user:username}', [UserController::class, 'show'])
+    ->name('users.show');
 
 Route::view('for-writers', 'pages.for-writers');
 

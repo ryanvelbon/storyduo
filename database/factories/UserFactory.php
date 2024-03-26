@@ -20,6 +20,10 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'sm_instagram' => rand(1,10) > 3 ? fake()->userName() : null,
+            'sm_linkedin' => rand(1,10) > 3 ? fake()->userName() : null,
+            'sm_twitter' => rand(1,10) > 3 ? fake()->userName() : null,
+
         ];
     }
 

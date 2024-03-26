@@ -47,7 +47,11 @@
     <div class="mx-auto max-w-3xl py-8 px-4 flex flex-col gap-10 sm:flex-row">
         <img class="w-52 flex-none rounded-full object-cover" src="{{ asset('storage/' . $story->author->avatar) }}" alt="">
         <div class="max-w-xl flex-auto">
-            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">{{ $story->author->name }}</h3>
+            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900 hover:text-primary-600">
+                <a href="{{ route('users.show', $story->author) }}">
+                    {{ $story->author->name }}
+                </a>
+            </h3>
             <p class="text-base leading-7 text-gray-600">Author</p>
             <p class="mt-6 text-base leading-7 text-gray-600">{{ $story->author->bio }}</p>
             <ul role="list" class="mt-6 flex gap-x-6">

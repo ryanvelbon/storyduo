@@ -5,7 +5,7 @@
             <h2 class="text-3xl font-bold text-gray-800">Edit your profile</h2>
             <div class="gap-2">
                 <button type="submit" class="btn btn-primary">Save changes</button>
-                <a href="" class="btn btn-muted">View profile</a>
+                <a href="{{ route('users.show', auth()->user()) }}" class="btn btn-muted">View profile</a>
             </div>
         </div>
         {{ $this->form }}

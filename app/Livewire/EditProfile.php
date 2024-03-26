@@ -33,7 +33,6 @@ class EditProfile extends Component implements HasForms
                                     ->required(),
                                 Forms\Components\FileUpload::make('avatar')
                                     ->image()
-                                    ->panelLayout('circle')
                                     ->maxSize(1024),
                             ])
                             ->columnSpan(1),
