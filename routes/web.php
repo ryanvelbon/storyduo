@@ -10,6 +10,7 @@ use App\Livewire\Auth\Passwords\Reset;
 use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
 use App\Livewire\CreateContribution;
+use App\Livewire\EditProfile;
 use Illuminate\Support\Facades\Route;
 
 
@@ -54,6 +55,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', LogoutController::class)
         ->name('logout');
+
+    Route::get('profile/edit', EditProfile::class)
+        ->name('profile.edit');
 
     Route::get('contribute/stories/create', CreateContribution::class)
         ->name('contributions.create');
