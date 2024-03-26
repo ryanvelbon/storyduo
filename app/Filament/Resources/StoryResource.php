@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\StoryResource\Pages;
 use App\Filament\Resources\StoryResource\RelationManagers;
 use App\Models\Story;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
@@ -33,6 +34,7 @@ class StoryResource extends Resource
                             ->schema([
                                 Forms\Components\Select::make('author_id')
                                     ->relationship(name: 'author', titleAttribute: 'username')
+                                    ->getOptionLabelFromRecordUsing(fn (User $record) => "{$record->name} ({$record->username})")
                                     ->searchable(['name', 'username', 'email']),
                                 Forms\Components\Select::make('language_id')
                                     ->relationship(name: 'language', titleAttribute: 'name'),
