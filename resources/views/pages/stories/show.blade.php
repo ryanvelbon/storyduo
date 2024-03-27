@@ -5,15 +5,19 @@
     <div class="container flex flex-col items-center">
         <h1 class="text-3xl md:text-4xl lg:text-5xl text-gray-800 font-bold">{{ $story->title }}</h1>
         <div class="mt-4 flex flex-col sm:flex-row flex-wrap items-center gap-x-8 lg:gap-x-32 gap-y-1 overflow-hidden text-sm leading-6 text-gray-600 border border-0 border-t-2 border-gray-600 pt-3 md:px-8">
-            <div class="flex flex-col sm:flex-row items-center gap-x-2.5">
-                <img src="{{ asset('storage/' . $story->author->avatar) }}" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">
-                <span class="tracking-wide">{{ $story->author->name }}</span>
-            </div>
+            <a href="{{ route('users.show', $story->author) }}" class="group">
+                <div class="flex flex-col sm:flex-row items-center gap-x-2.5">
+                    <img src="{{ asset('storage/' . $story->author->avatar) }}" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">
+                    <span class="tracking-wide group-hover:text-primary-600">{{ $story->author->name }}</span>
+                </div>
+            </a>
             <time datetime="{{ $story->created_at->format('Y-m-d') }}" class="text-gray-800 text-base">{{ $story->created_at->format('M j, Y') }}</time>
-            <div class="flex flex-col sm:flex-row items-center gap-x-2.5">
-                <span class="tracking-wide">{{ $story->language->name }}</span>
-                <img src="{{ asset('img/languages/square/' . $story->language->flag_code . '.png') }}" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">
-            </div>
+            <a href="{{ route('stories.index', $story->language) }}" class="group">
+                <div class="flex flex-col sm:flex-row items-center gap-x-2.5">
+                    <span class="tracking-wide group-hover:text-primary-600">{{ $story->language->name }}</span>
+                    <img src="{{ asset('img/languages/square/' . $story->language->flag_code . '.png') }}" alt="" class="h-6 w-6 flex-none rounded-full bg-white/10">
+                </div>
+            </a>
         </div>
     </div>
 </div>

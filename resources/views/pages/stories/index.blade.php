@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bg-gray-300 py-16 mb-12">
-        <div class="flex items-center gap-12 container">
-            <img src="{{ asset('img/languages/square/' . $language->flag_code . '.png') }}" class="rounded-full w-20 h-20">
+    <div class="py-32 mb-12">
+        <div class="container max-w-4xl">
             <div>
-                <h2 class="text-5xl text-gray-500 font-bold text-center mb-8">{{ $language->name }} Stories</h2>
-                <a href="{{ route('stories.random', $language) }}" class="btn btn-secondary">Random story</a>
+                <p class="text-5xl text-gray-900 mb-8 max-w-lg"><span class="font-bold">{{ $language->name }}</span> short stories with English translation</p>
+                <a href="{{ route('stories.random', $language) }}" class="btn btn-xl btn-primary">Random story</a>
             </div>
         </div>
     </div>
@@ -24,14 +23,14 @@
                     </a>
                     <p class="uppercase text-gray-500 text-lg tracking-widest">{{ $story->title_en }}</p>
                     <p class="prose md:prose-lg lg:prose-xl font-serif">{!! $story->description !!}</p>
-                    <div class="flex items-center h-16">
+                    <div class="flex justify-center sm:justify-start items-center h-16">
                         <a href="{{ route('stories.show', $story) }}" class="btn btn-xl bg-gray-200 hover:bg-gray-300 text-gray-600 uppercase">Read more</a>
                     </div>
                 </div>
             </div>
         @empty
-            <div>
-                No results.
+            <div class="bg-gray-100 text-gray-700 text-center py-12 mb-8">
+                No stories published yet.
             </div>
         @endforelse
         <div>
